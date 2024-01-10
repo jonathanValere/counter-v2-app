@@ -3,6 +3,9 @@ import "./App.css";
 import Counter from "./components/Counter";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
+library.add(faStopwatch);
 
 function App() {
   // Création State du Add counter --------------------
@@ -25,10 +28,14 @@ function App() {
   return (
     <>
       <Header />
-      <main>
-        {/* AJouter un nouveau composant Counter */}
-        <button onClick={handleAdd}>Add Counter</button>
-        {addCounter}
+      <main className="container">
+        <section>
+          {/* AJouter un nouveau composant Counter */}
+          <button className="btn-add-counter" onClick={handleAdd}>
+            Add Counter
+          </button>
+          <div className="counters">{addCounter}</div>
+        </section>
       </main>
       <Footer />
     </>

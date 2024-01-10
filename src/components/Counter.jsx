@@ -28,22 +28,37 @@ export default function Counter() {
   };
   // Rendu ---------------------
   return (
-    <section>
+    <article>
       <div>
-        {counter.result > 0 && (
-          <div onClick={(event) => handleCounter("less", event)}>
+        {counter.result > 0 ? (
+          <button
+            className="operator"
+            onClick={(event) => handleCounter("less", event)}
+          >
             {counter.less}
-          </div>
+          </button>
+        ) : (
+          <div className="zero"></div>
         )}
 
-        <div>{counter.result}</div>
-        {counter.result < 10 && (
-          <div onClick={(event) => handleCounter("more", event)}>
+        <span>{counter.result}</span>
+        {counter.result < 10 ? (
+          <button
+            className="operator"
+            onClick={(event) => handleCounter("more", event)}
+          >
             {counter.more}
-          </div>
+          </button>
+        ) : (
+          <div className="zero"></div>
         )}
       </div>
-      <button onClick={(event) => handleCounter("reset", event)}>Reset</button>
-    </section>
+      <button
+        className="reset"
+        onClick={(event) => handleCounter("reset", event)}
+      >
+        Reset
+      </button>
+    </article>
   );
 }
