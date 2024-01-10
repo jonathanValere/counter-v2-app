@@ -127,4 +127,8 @@ footer span {
     display: flex;
     flex-direction: column;
   }
+
+  footer {
+    position: relative;
+  }
 }
