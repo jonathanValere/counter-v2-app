@@ -15,7 +15,7 @@ function App() {
   const handleAdd = (event) => {
     // Réaliser une copie en surface (le 1er niveau) de addCounter
     const newCounter = [...addCounter];
-    // Vérifier si addCounter est inférieur à 3
+    // Structure conditionnelle pour vérifier si addCounter est inférieur à 3
     if (addCounter.length < 3) {
       // Si true, ajouter un nouveau composant Counter avec une nouvelle clé dans la copie
       newCounter.push(<Counter key={addCounter.length + 1} />);
